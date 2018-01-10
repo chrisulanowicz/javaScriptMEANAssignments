@@ -1,0 +1,56 @@
+<html>
+<body>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul> 
+
+    <div id="cars">
+        
+    </div>
+
+    <!-- =========================================================================== -->
+
+    <script>
+        // Complete appendList to append each element of the array as an <li> to the <ul> with the specified id
+
+        function appendList(array, id){
+            // finish this function
+            let target = document.getElementById(id);
+            let node;
+            let textNode;
+
+            for(let i = 0; i < array.length; i++){  
+                node = document.createElement("li");
+                node.innerHTML = array[i];
+                target.appendChild(node);
+            }
+        };
+
+        // Now also take in what kind of element to append to a given id
+        function superAppend(array, element, id){
+            // element can be p, li, h1, etc etc
+            let target = document.getElementById(id);
+            let node;
+            let textNode;
+
+            for(let i = 0; i < array.length; i++){  
+                node = document.createElement(element);
+                node.innerHTML = array[i];
+                target.appendChild(node);
+            }
+        };
+
+        // appendList test
+        let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+        let target_id = "main";
+        appendList(students, target_id);
+
+        // superAppend test
+        let cars = ["Dodge", "Plymouth", "Chrysler"];
+        let divId = "cars";
+        superAppend(cars, "h2", divId);
+        
+    </script>   
+</body>
+</html>
