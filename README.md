@@ -1,7 +1,7 @@
 Index of MEAN Stack assignments.  Progresses from basic JavaScript to advanced Full MEAN (MongoDB, Express.js, Angular.js, and Node.js)
 
 SECTION I - JavaScript
-===========================================================================
+====================================================================================
 
 - JavaScript Fundamentals
 
@@ -30,4 +30,42 @@ SECTION I - JavaScript
 		- predicting JavaScript behavior when hoisting variable declarations and functions
 
 	9. JS_Scroll
-		- 
+		- debugging script that iterates an array of strings and dynamically displays each string with a typing effect
+
+
+- JavaScript OOP
+	
+	1. Ninja_Class_I
+
+	2. Ninja_Class_II
+
+
+- Advanced JavaScript
+
+	1. 
+
+
+SECTION II - Node.js
+==================================================================================
+
+
+SECTION III - Express.js
+==================================================================================
+
+SECTION IV - MongoDB
+==================================================================================
+
+SECTION V - Angular.js
+==================================================================================
+
+SECTION VI - Full MEAN
+==================================================================================
+
+SECTION VII - Deployment
+==================================================================================
+
+
+
+
+
+
