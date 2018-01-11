@@ -36,9 +36,13 @@ SECTION I - JavaScript
 - JavaScript OOP
 	
 	1. Ninja_Class_I
+		- Create a simple class with attributes and methods
 
 	2. Ninja_Class_II
+		- Build off Ninja_Class_I adding additional methods and validating class types
 
+	3. Ninja_Class_III
+		- Recreate prior Ninja class using ES6 syntax and add a child class
 
 - Advanced JavaScript
 
