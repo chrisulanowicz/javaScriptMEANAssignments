@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Demo</title>
+	<style>
+		body {
+			background-color:black;
+			font-family: monospace;
+			color:white;
+			font-size:50px;
+			text-align: center;
+			margin-top:20%;
+		}
+		#magic{
+			color: #777;
+			border-right: 1px solid #777;
+			padding-right: 7px;
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+    
+	Coding is <div id="magic"></div>
+    
+  <script>
+  		// Fix the Issues in this code including:
+  		//	- last character of each string not displaying
+  		//	- spaces inside string are glitchy and mis-timed
+		var words = ["a lot of fun", "about not giving up", "challenging and empowering", "creative expression", "my life!"],
+			el = document.getElementById('magic'),
+			word_counter = 0,
+			character_counter = 0;
+		function updateText()
+		{
+			// el.innerHTML = el.innerHTML+words[word_counter][character_counter++];  ORIGINAL
+			// following 3 lines fixes space/cursor glitch
+			let char = words[word_counter][character_counter];
+			el.innerHTML = char == " " ? el.innerHTML += "&nbsp" : el.innerHTML += char;
+			character_counter++;
+
+			// if(character_counter == words[word_counter].length)   ORIGINAL
+			if(character_counter == words[word_counter].length + 1)  // fixed issue of last character not showing up
+			{
+				word_counter++; 	//choose a different word
+				character_counter = 0;	//start over with the first character of the word
+				el.innerHTML = '';  //set the html to be blank
+				//if we're displaying the last word, go back to the first word
+				if(word_counter == words.length)
+					word_counter = 0;
+			}
+		}
+		setInterval(updateText,300);
+	</script>
+</body>
+</ht
