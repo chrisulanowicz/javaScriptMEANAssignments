@@ -44,6 +44,10 @@ SECTION I - JavaScript
 	3. Ninja_Class_III
 		- Recreate prior Ninja class using ES6 syntax and add a child class
 
+	4. Deck_Of_Cards
+		- Create multiple classes that interact to allow a blackjack game
+
+
 - Advanced JavaScript
 
 	1. 
