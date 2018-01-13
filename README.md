@@ -50,7 +50,8 @@ SECTION I - JavaScript
 
 - Advanced JavaScript
 
-	1. 
+	1. JS_Library
+		- Create a simple library with (map, reduce, find, filter, reject) and use callbacks
 
 
 SECTION II - Node.js
