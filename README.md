@@ -53,6 +53,10 @@ SECTION I - JavaScript
 	1. JS_Library
 		- Create a simple library with (map, reduce, find, filter, reject) and use callbacks
 
+	2. Hunting_Github
+		- AJAX get request to Github API and display info using jQuery and callbacks
+		- Also uses ES6 fetch and Promises instead of jQuery and callbacks
+
 
 SECTION II - Node.js
 ==================================================================================

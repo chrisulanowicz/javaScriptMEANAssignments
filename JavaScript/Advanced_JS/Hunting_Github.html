@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Hunting Github</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<input type="text" id="gitName" />
+	<button id="findUser">Find User on Github</button>
+	
+	<div id="gitInfo">
+		
+	</div>
+
+	<script>
+	// Create a button that when clicked will send a request to Github's API and then display the user's name
+	// Optional task is to use Promises instead of callbacks
+
+	// ==================================================================================
+	// using jQuery and callbacks
+	$(document).ready(function(){
+		console.log("jQuery runnin");
+		$("#findUser").click(function(){
+
+			let input = $("#gitName").val();
+
+			$.get("https://api.github.com/users/" + input, displayInfo);
+
+			function displayInfo(data){
+
+				let newInfo = "<p>Name: " + data.name + " has " + data.public_repos + " repos</p>";
+				$("#gitInfo").html(newInfo);
+			}
+			$("#gitName").val("");
+			return false;
+		});
+	});
+
+	// =================================================================================
+	// using ES6 and Promises
+	let userSubmit = document.getElementById("findUser");
+	let updatedInfo = document.getElementById("gitInfo");
+
+	userSubmit.addEventListener("click", getGithubInfo);
+
+	function getGithubInfo(){
+		let userInput = document.getElementById("gitName");
+		let inputValue = userInput.value;
+
+		fetch("https://api.github.com/users/" + inputValue)
+			.then(response => {
+
+				if(response.ok){
+					return Promise.resolve(response);
+				}
+				else{
+					return Promise.reject(new Error("Username not found"));
+				}
+
+			})
+			.then(response => response.json())
+			.then(data => {
+
+				let newInfo = `<p>Name: ${data.name} has ${data.public_repos} repos</p>`;
+				updatedInfo.innerHTML = newInfo;
+				userInput.value = "";
+
+			})
+			.catch(function(error){
+
+				let errorInfo = `<p>Error: ${error.message}</p>`;
+				updatedInfo.innerHTML = errorInfo;
+
+			})
+
+	}
+
+
+
+
+	</script>
+</body>
+</html>
